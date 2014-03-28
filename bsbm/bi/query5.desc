@@ -1,0 +1,27 @@
+{QueryType:Select,
+
+params:[
+{name:ProductType,
+class:ProductTypeRangeURI,
+range:[1,0,lvleq]
+}
+],
+
+results: [
+{column:country,
+type:str	
+},
+{column:product,
+type:str
+}
+,
+{column:nrOfReviews,
+type:int
+}
+,
+{column:avgPrice,
+type:decimal.1
+}
+]
+
+}

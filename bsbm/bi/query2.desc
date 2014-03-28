@@ -1,0 +1,18 @@
+{QueryType:Select,
+
+params:[
+{name:Product,
+class:ProductURI
+}
+],
+
+results: [
+{column:Product,
+type:str	
+},
+{column:SameFeatures,
+type:int
+}
+]
+
+}

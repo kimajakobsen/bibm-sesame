@@ -1,0 +1,18 @@
+{QueryType:Select,
+
+params:[
+{name:Producer,
+class:ProducerURI
+}
+],
+
+results: [
+{column:reviewer,
+type:str
+},
+{column:reviewerAvgScore,
+type:decimal.5
+}
+]
+
+}

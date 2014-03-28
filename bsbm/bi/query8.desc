@@ -1,0 +1,19 @@
+{QueryType:Select,
+
+params:[
+{name:ProductType,
+class:ProductTypeRangeURI,
+range:[1,0,lvleq]
+}
+],
+
+results: [
+{column:vendor,
+type:str	
+},
+{column:cheapExpensiveRatio,
+type:decimal.5
+}
+]
+
+}

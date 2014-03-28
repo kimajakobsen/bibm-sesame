@@ -1,0 +1,19 @@
+{QueryType:Select,
+
+params:[
+{name:ProductType,
+class:ProductTypeRangeURI,
+range:[0,0,lvleq]
+},
+{name:Country, 
+class:CountryURI
+}
+],
+
+results: [
+{column:product,
+type:str	
+}
+]
+
+}

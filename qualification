@@ -1,0 +1,6 @@
+#!/bin/bash
+
+basedir=${0%/*}
+. ${basedir}/classpath.sh
+
+java -Xmx256M benchmark.qualification.Qualification "$@"

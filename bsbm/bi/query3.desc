@@ -1,0 +1,27 @@
+{QueryType:Select,
+
+params:[
+{name:ConsecutiveMonth_0,
+class:ConsecutiveMonth,
+range:[0]
+},
+{name:ConsecutiveMonth_1,
+class:ConsecutiveMonth,
+range:[1]
+},
+{name:ConsecutiveMonth_2,
+class:ConsecutiveMonth,
+range:[2]
+}
+],
+
+results: [
+{column:product,
+type:str	
+},
+{column:ratio,
+type:decimal.5
+}
+]
+
+}

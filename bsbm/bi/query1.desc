@@ -1,0 +1,21 @@
+{QueryType:Select,
+
+params:[
+{name:Country1,
+class:CountryURI
+},
+{name:Country2, 
+class:CountryURI
+}
+],
+
+results: [
+{column:productType,
+type:str	
+},
+{column:reviewCount,
+type:int
+}
+]
+
+}
