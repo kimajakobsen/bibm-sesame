@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Writer;
 
-import com.openlink.bsbm.Exceptions.ExceptionException;
+import com.openlinksw.bibm.Exceptions.ExceptionException;
+import com.openlinksw.util.json.Printer;
 
 public class OutPrinter  extends Printer {
     PrintStream out=System.out;
     
     public OutPrinter() {
-        super(false); // FIXME
+        super(); // FIXME
     }
 
     @Override
@@ -21,6 +22,11 @@ public class OutPrinter  extends Printer {
     }
 
     @Override
+    protected Printer append(String s) {
+        return append((Object)s);
+    }
+
+
     public Printer append(Object s) {
         out.append(s.toString());
         out.flush();

@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import com.openlinksw.util.json.JsonParser;
+import com.openlinksw.util.json.Printer;
 import org.junit.Test;
 
 public class TestPrinter {
@@ -11,8 +13,8 @@ public class TestPrinter {
     public void testList() throws IOException {
         Printer printer=new OutPrinter();
         BufferedReader in = new BufferedReader(new FileReader("com/openlink/util/json/list.json"));
-        JsonParser parser=new JsonParser(in, printer);
-        parser.parse();
+       // JsonParser parser=new JsonParser(in, printer);
+        //parser.parse();
     }
 
 }
