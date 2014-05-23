@@ -42,10 +42,7 @@ public abstract class AbstractTestDriver extends ConnectionParameters {
    public LongOption seed=new LongOption("seed <Long Integer>", 808080L
            ,"Init the Test Driver with another seed than the default."
            ,"default: %%");
-   
-   public IntegerOption timeout=new IntegerOption("t <timeout in ms>", 0
-           ,"Timeouts will be logged for the result report."
-           ,"default: "+0);
+
    
    StringOption sutCmd=new StringOption("sut <sutcommand>", null
            ,"Measures the server's CPU time using external program."

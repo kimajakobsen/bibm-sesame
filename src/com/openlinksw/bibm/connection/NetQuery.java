@@ -106,7 +106,11 @@ public class NetQuery {
 				try {
 					conn.connect();
 	                rc = conn.getResponseCode();
-				} catch(IOException e) {
+				}
+                catch(SocketTimeoutException e) {
+                    throw e;
+                }
+                catch(IOException e) {
 					throw new ExceptionException("Could not connect to SPARQL Service: "+conn.getURL(), e);
 				}
 				if (rc !=500) 	break;
@@ -124,6 +128,9 @@ public class NetQuery {
 				Thread.sleep(timeout);
 				timeout=(long)(timeout*1.5);
 			}
+            if(rc == 503) {
+                throw new SocketTimeoutException(); // Tomcat returns 503 on timeout
+            }
 			if (rc < 200 || rc >= 300) {
 				reportError(httpReplyBody, "Received error code "+rc+" "+conn.getResponseMessage());
 				throw new RequestFailedException();

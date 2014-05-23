@@ -41,7 +41,7 @@ public class SPARQLConnection implements ServerConnection{
             result.setCurrent(timeInSeconds);
 
             if (is==null) { // Timeout
-                DoubleLogger.getOut().printf("Query %s: %d seconds timeout!\n", queryName, timeInSeconds);
+                DoubleLogger.getOut().printf("Query %s: %f seconds timeout!\n", queryName, timeInSeconds);
                 result.reportTimeOut();
                 result.setCurrent(timeInSeconds);
                 qe.close();
