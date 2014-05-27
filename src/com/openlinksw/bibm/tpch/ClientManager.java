@@ -98,7 +98,7 @@ public class ClientManager extends AbstractClientManager<QueryMixStatistics> {
             refershThread.start();
         }
         if(nrThreads==0) {
-            addResult(null);
+            driver.resultQueue.setFinish();
         }
 	}
 
