@@ -3,21 +3,21 @@
   update_header: [ # these lines will be inserted at the beginning of INSERT DATA query
       "define sql:big-data-const 0",
       "prefix xsd:<http://www.w3.org/2001/XMLSchema#>",
-      "prefix rdfh: <http://lod2.eu/schemas/rdfh#>",
-      "prefix rdfh-inst: <http://lod2.eu/schemas/rdfh-inst#>"
+      "prefix ltpch: <http://lod2.eu/schemas/rdfh#>",
+      "prefix ltpch-inst: <http://lod2.eu/schemas/rdfh-inst#>"
           ],
   header: [ # these lines will be inserted at the beginning of each .ttl file
       "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
-      "@prefix rdfh: <http://lod2.eu/schemas/rdfh#> .",
-      "@prefix rdfh-inst: <http://lod2.eu/schemas/rdfh-inst#> ."
+      "@prefix ltpch: <http://lod2.eu/schemas/rdfh#> .",
+      "@prefix ltpch-inst: <http://lod2.eu/schemas/rdfh-inst#> ."
           ],
-  default_tag: rdfh, # tag for properties; a field 'name' will be referenced as 'rdfh:name'
+  default_tag: ltpch, # tag for properties; a field 'name' will be referenced as 'ltpch:name'
 
   tables:[  
     { name: customer, # both name of .tbl file and object of 'a' property
-      tag: rdfh-inst, # tag for object and subject
+      tag: ltpch-inst, # tag for object and subject
 	  fields:[  # describe fields of the csv file
-			    # first field in .tbl file become rdfh:c_custkey etc.
+			    # first field in .tbl file become ltpch:c_custkey etc.
 		{ name: c_custkey, type: int},
 		{ name: c_name, type: str },
 		{ name: c_address, type: str },
@@ -32,7 +32,7 @@
 	   ]
     },
     { name: lineitem,
-      tag: rdfh-inst,
+      tag: ltpch-inst,
 	  fields:[
 		{ name: l_has_order,
 		  refto: orders # refto means that int value N will become order_N 
@@ -59,7 +59,7 @@
 	   ]
     },
     { name: nation,
-      tag: rdfh-inst,
+      tag: ltpch-inst,
 	  fields:[
 		{ name: n_nation,
           type: int, # int means actually long int
@@ -74,7 +74,7 @@
 	   ]
     },
     { name: orders,
-      tag: rdfh-inst,
+      tag: ltpch-inst,
 	  fields:[
 		{ name: o_orderkey, type: int },
 		{ name: o_has_customer, refto: customer },
@@ -91,7 +91,7 @@
 		]
     },
     { name: part,
-      tag: rdfh-inst,
+      tag: ltpch-inst,
 	  fields:[
 		{name: p_partkey, type: int },
 		{ name: p_name, type: str },
@@ -108,7 +108,7 @@
 	   ]
     },
     { name: partsupp,
-      tag: rdfh-inst,
+      tag: ltpch-inst,
 	  fields:[
 		{ name: ps_has_part,  refto: part }, # part, has_ps_partkey
         { name: ps_has_supplier, refto: supplier},
@@ -122,7 +122,7 @@
 	   ]
     },
     { name: region,
-      tag: rdfh-inst,
+      tag: ltpch-inst,
 	  fields:[
 		{ name: r_regionkey, type: int, prop: false},
 		{ name: r_name, type: str },
@@ -133,7 +133,7 @@
 	   ]
     },
     { name: supplier,
-      tag: rdfh-inst,
+      tag: ltpch-inst,
 	  fields:[
 		{ name: s_suppkey, type: int },
 		{ name: s_name, type: str },

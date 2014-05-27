@@ -97,7 +97,9 @@ public class ClientManager extends AbstractClientManager<QueryMixStatistics> {
         if (refershThread!=null) {
             refershThread.start();
         }
-
+        if(nrThreads==0) {
+            addResult(null);
+        }
 	}
 
     public Object[] getParametersForQuery(Query query, int level) {
