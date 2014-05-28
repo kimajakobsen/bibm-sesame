@@ -79,8 +79,9 @@ public abstract class AbstractTestDriver extends ConnectionParameters {
     public AbstractTestDriver(String... usageHeader) throws IOException {
         super(usageHeader);
         File logFile = new File("run.log");
+        File errorFile = new File("error.log");
         DoubleLogger.setErrFile(logFile);
-        DoubleLogger.setOutFile(logFile);
+        DoubleLogger.setOutFile(errorFile);
         logger = new FileWriter(logFile);
    }
 
